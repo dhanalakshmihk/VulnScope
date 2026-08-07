@@ -1,0 +1,60 @@
+/* ---------------------------------------------------------------
+   VulnScope Design Tokens
+   Deep slate console aesthetic (not pure black, not the generic
+   acid-green terminal cliche). Severity colors are functional
+   signal, not decoration — they must stay legible and consistent
+   everywhere they appear.
+------------------------------------------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #0F1419;
+  --panel: #161B22;
+  --panel-raised: #1C2129;
+  --border: #2D333B;
+  --border-subtle: #21262D;
+
+  --text: #E6EDF3;
+  --text-muted: #8B949E;
+  --text-faint: #545D68;
+
+  --accent: #58A6FF;
+  --accent-dim: #1F6FEB33;
+
+  --sev-critical: #F85149;
+  --sev-high: #DB6D28;
+  --sev-medium: #D4A72C;
+  --sev-low: #56D364;
+  --sev-none: #6E7681;
+
+  --font-ui: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+
+  --radius: 6px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-ui);
+  -webkit-font-smoothing: antialiased;
+}
+
+code, .mono { font-family: var(--font-mono); }
+
+::selection { background: var(--accent-dim); }
+
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
